@@ -6,6 +6,11 @@ import HeroCarrossel from "@/components/HeroCarrossel";
 import BannerCarrossel from "@/components/BannerCarrossel";
 import SiteAbas from "@/components/SiteAbas";
 
+const WHATSAPP_NUMERO = "5511957680664";
+const WHATSAPP_TEXTO = "Olá! Vim pelo seu portfólio e quero criar a minha marca.";
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(WHATSAPP_TEXTO)}`;
+const WHATSAPP_LINK_SIMPLES = `https://wa.me/${WHATSAPP_NUMERO}`;
+
 const servicos = [
   { t: "Identidade visual", d: "Logotipo, paleta, tipografia e padrões que dão rosto à sua marca." },
   { t: "Estratégia de marca", d: "Posicionamento e narrativa para crescer com autenticidade." },
@@ -37,7 +42,7 @@ export default function Home() {
     <>
       <section className="manifesto" style={{ marginTop: 96 }}>
         <div className="wrap">
-          <h2>Acreditamos que uma marca bonita nasce de uma marca verdadeira.</h2>
+          <h2>Acreditamos que uma marca reconhecida nasce de uma essência estratégica.</h2>
           <p>Cada projeto começa ouvindo a história de quem está por trás do negócio. Depois, transformamos essa história em identidade, linguagem e imagem.</p>
         </div>
       </section>
@@ -100,8 +105,41 @@ export default function Home() {
       <section className="contato" aria-labelledby="titulo-contato">
         <div className="wrap">
           <h2 id="titulo-contato">Vamos criar a sua marca?</h2>
-          <p>Conte um pouco sobre o seu negócio e eu respondo em até 2 dias úteis.</p>
-          <a className="botao" href="mailto:sarahhsantos2026@gmail.com">Enviar e-mail</a>
+          <p>Conte um pouco sobre o seu negócio e eu respondo o mais rápido possível.</p>
+
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 12,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {/* Botão principal: WhatsApp */}
+            <a
+              className="botao"
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chamar no WhatsApp
+            </a>
+
+            {/* Botão secundário: e-mail */}
+            <a
+              className="botao"
+              href="mailto:sarahhsantos2026@gmail.com"
+              style={{
+                background: "transparent",
+                color: "inherit",
+                border: "1.5px solid currentColor",
+              }}
+            >
+              Enviar e-mail
+            </a>
+          </div>
+
           <p className="redes">
             <a href="https://www.instagram.com/lirea.design/" target="_blank" rel="noopener noreferrer">Instagram</a>{" · "}
             <a href="https://www.linkedin.com/in/sarah-santossilva/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -118,6 +156,7 @@ export default function Home() {
       <footer>
         <div className="wrap">
           <span>
+            <a href={WHATSAPP_LINK_SIMPLES} target="_blank" rel="noopener noreferrer">WhatsApp</a>{" · "}
             <a href="mailto:sarahhsantos2026@gmail.com">E-mail</a>{" · "}
             <a href="https://www.instagram.com/lirea.design/" target="_blank" rel="noopener noreferrer">Instagram</a>{" · "}
             <a href="https://www.linkedin.com/in/sarah-santossilva/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

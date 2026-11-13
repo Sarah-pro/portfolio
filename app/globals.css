@@ -245,9 +245,9 @@ a:focus-visible{outline:3px solid #d14367;outline-offset:4px}
 @media (min-width: 600px) { .pc-titulo { font-size: 1rem; } }
 
 @media (max-width: 700px) {
-  .pc-seta { width: 2.25rem; height: 2.25rem; font-size: 1.2rem; }
-  .pc-seta-esq { left: -0.5rem; }
-  .pc-seta-dir { right: -0.5rem; }
+  .pc-seta { width: 1.9rem; height: 1.9rem; }
+  .pc-seta-esq { left: 0.25rem; }
+  .pc-seta-dir { right: 0.25rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -602,7 +602,8 @@ a:focus-visible{outline:3px solid #d14367;outline-offset:4px}
 .hc-bolinhas button:focus-visible { outline: 3px solid #6b0f33; outline-offset: 2px; }
 
 @media (max-width: 700px) {
-  .hc-seta { width: 2.25rem; height: 2.25rem; }
+  .hc-janela { touch-action: pan-y; }
+  .hc-bolinhas button { width: 0.65rem; height: 0.65rem; }
 }
 /* ===== Banner "Criar é o que me move" ===== */
 .banner-criar { width: 100%; line-height: 0; }
@@ -674,7 +675,17 @@ a:focus-visible{outline:3px solid #d14367;outline-offset:4px}
 .bn-bolinhas button:focus-visible { outline: 3px solid #6b0f33; outline-offset: 2px; }
 
 @media (max-width: 700px) {
-  .bn-seta { width: 2.25rem; height: 2.25rem; }
+  .bn-seta {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-width: 1.5px;
+    background: rgba(107, 15, 51, 0.7);
+  }
+  .bn-esq { left: 0.5%; }
+  .bn-dir { right: 0.5%; }
+}
+@media (max-width: 420px) {
+  .bn-seta { width: 1.5rem; height: 1.5rem; }
 }
 /* ===== Título escondido (só para leitores de tela) ===== */
 .so-leitor {
@@ -780,4 +791,44 @@ a:focus-visible{outline:3px solid #d14367;outline-offset:4px}
   max-width: 1100px;
   height: auto;
   margin: 0 auto;
+}
+/* ===== Segurança para celular ===== */
+html, body { overflow-x: hidden; }
+img, video, canvas, iframe { max-width: 100%; }
+
+@media (max-width: 700px) {
+  .wrap { padding: 0 16px; }
+  .nav .wrap nav ul { gap: 12px; font-size: 0.68rem; }
+  .botao { padding: 12px 20px; }
+}
+/* ===== Celular: setas embaixo, ao lado das bolinhas ===== */
+@media (max-width: 700px) {
+  .hc-janela,
+  .bn-janela {
+    position: static;
+    touch-action: pan-y;
+  }
+
+  .hc-bolinhas,
+  .bn-bolinhas {
+    height: 2.75rem;
+    padding: 0;
+    align-items: center;
+  }
+
+  .hc-seta,
+  .bn-seta {
+    top: auto;
+    bottom: 0.375rem;
+    transform: none;
+    width: 2rem;
+    height: 2rem;
+    border-width: 1.5px;
+    background: #6b0f33;
+  }
+
+  .hc-esq,
+  .bn-esq { left: calc(50% - 4.4rem); }
+  .hc-dir,
+  .bn-dir { right: calc(50% - 4.4rem); }
 }
